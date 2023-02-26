@@ -3,6 +3,7 @@
 namespace Cyberbrains\Filamanager\Controllers;
 use Cyberbrains\Filamanager\UploadFileService;
 use Exception;
+use Illuminate\Http\Client\Request;
 
 class FileController extends ApiController
 {
@@ -14,7 +15,7 @@ class FileController extends ApiController
         $this->fileService = new UploadFileService();
     }
 
-    public function upload()
+    public function upload(Request $request)
     {
         try {
             $model = $this->fileService->upload($request->file('file'));

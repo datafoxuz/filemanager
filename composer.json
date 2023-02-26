@@ -20,8 +20,5 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {
-        "laravel/framework": "^9.19",
-        "intervention/image": "^2.7"
-    }
+
 }

@@ -4,7 +4,7 @@ namespace Cyberbrains\Filamanager\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class PaycomPaymentProvider extends ServiceProvider
+class FileProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -36,7 +36,7 @@ class PaycomPaymentProvider extends ServiceProvider
 
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('fileupload.php'),
-            ], 'paycom');
+            ], 'fileupload');
 
         }
     }

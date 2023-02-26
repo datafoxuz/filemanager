@@ -8,6 +8,13 @@
             "Cyberbrains\\Filemanager\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cyberbrains\\Filemanager\\Providers\\FileProvider"
+            ]
+        }
+    },
     "authors": [
         {
             "name": "AsadbekDev"

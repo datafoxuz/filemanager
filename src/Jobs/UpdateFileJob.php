@@ -1,6 +1,6 @@
 <?php
 
-namespace Cyberbrains\Filamanager\Jobs;
+namespace Cyberbrains\Filemanager\Jobs;
 
 class UpdateFileJob
 {

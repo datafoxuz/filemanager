@@ -1,6 +1,6 @@
 <?php
 
-namespace Cyberbrains\Filamanager\Models;
+namespace Cyberbrains\Filemanager\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

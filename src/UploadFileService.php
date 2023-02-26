@@ -1,8 +1,9 @@
 <?php
 
-namespace Cyberbrains\Filamanager;
+namespace Cyberbrains\Filemanager;
 
-use App\Models\File;
+use Cyberbrains\Filemanager\WebpConverter;
+use Cyberbrains\Filemanager\Models\File;
 use Exception;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Auth;
@@ -35,10 +36,10 @@ class UploadFileService
                 }
                 $service = new WebpConverter();
                 $service->storePoster($file, $fullPath);
-                $link = UploadFileService . phpenv('STATIC_HOST') . $fileName . '.webp';
+                $link = env('STATIC_HOST') . $fileName . '.webp';
             } else {
                 $file->store('files/' . Auth::id());
-                $link = UploadFileService . phpenv('STATIC_HOST') . $file->hashName();
+                $link = env('STATIC_HOST') . $file->hashName();
             }
 
 

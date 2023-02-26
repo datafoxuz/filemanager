@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Filemanager;
+namespace Cyberbrains\Filemanager;
 
 use Illuminate\Http\UploadedFile;
 use Intervention\Image\Facades\Image;

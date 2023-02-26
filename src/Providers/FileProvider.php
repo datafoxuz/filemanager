@@ -1,7 +1,8 @@
 <?php
 
-namespace Cyberbrains\Filamanager\Providers;
+namespace Cyberbrains\Filemanager\Providers;
 
+use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\ServiceProvider;
 
 class FileProvider extends ServiceProvider
@@ -11,7 +12,7 @@ class FileProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'fileupload');
         $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
@@ -25,8 +26,9 @@ class FileProvider extends ServiceProvider
      * Bootstrap services.
      *
      * @return void
+     * @throws BindingResolutionException
      */
-    public function boot()
+    public function boot(): void
     {
         $this->app->make('Cyberbrains\Filamanager\Controllers\ApiController');
         $this->app->make('Cyberbrains\Filamanager\Controllers\FileController');

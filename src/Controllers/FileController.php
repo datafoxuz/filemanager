@@ -1,7 +1,7 @@
 <?php
 
-namespace Cyberbrains\Filamanager\Controllers;
-use Cyberbrains\Filamanager\UploadFileService;
+namespace Cyberbrains\Filemanager\Controllers;
+use Cyberbrains\Filemanager\UploadFileService;
 use Exception;
 use Illuminate\Http\Client\Request;
 

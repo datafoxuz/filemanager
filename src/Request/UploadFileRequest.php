@@ -1,6 +1,6 @@
 <?php
 
-namespace Cyberbrains\Filamanager\Request;
+namespace Cyberbrains\Filemanager\Request;
 
 use Illuminate\Foundation\Http\FormRequest;
 

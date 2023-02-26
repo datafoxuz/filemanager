@@ -1,6 +1,6 @@
 <?php
 
-namespace Cyberbrains\Filamanager\Controllers;
+namespace Cyberbrains\Filemanager\Controllers;
 
 use Illuminate\Routing\Controller;
 use Illuminate\Http\JsonResponse;

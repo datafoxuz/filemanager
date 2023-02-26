@@ -13,9 +13,9 @@
             "name": "AsadbekDev"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "1.0.0",
     "require": {
-        "laravel/framework": "11.x-dev",
-        "illuminate/routing": "11.x-dev"
+        "laravel/framework": "11.*",
+        "illuminate/routing": "11.*"
     }
 }

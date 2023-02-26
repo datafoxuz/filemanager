@@ -30,8 +30,8 @@ class FileProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->app->make('Cyberbrains\Filamanager\Controllers\ApiController');
-        $this->app->make('Cyberbrains\Filamanager\Controllers\FileController');
+        $this->app->make('Cyberbrains\Filemanager\Controllers\ApiController');
+        $this->app->make('Cyberbrains\Filemanager\Controllers\FileController');
 
         if ($this->app->runningInConsole()) {
 

@@ -1,7 +1,6 @@
 {
     "name": "cyberbrains/filemanager",
     "description": "Filemanager for upload file for laravel",
-    "type": "composer-plugin",
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -20,7 +19,7 @@
             "name": "AsadbekDev"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
         "laravel/framework": "^9.19"
     }

@@ -16,7 +16,6 @@ class FileProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'fileupload');
         $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-//        $this->loadViewsFrom(__DIR__.'/views', 'todolist');
         $this->publishes([
 //            __DIR__.'/views' => base_path('resources/views/wisdmlabs/todolist'),
         ]);

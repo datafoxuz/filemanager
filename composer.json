@@ -15,7 +15,6 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "laravel/framework": "11.*",
-        "illuminate/routing": "11.*"
+        "laravel/framework": "9.*"
     }
 }

@@ -1,0 +1,21 @@
+{
+    "name": "cyberbrains/filemanager",
+    "description": "Filemanager for upload file for laravel",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Cyberbrains\\Filemanager\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "AsadbekDev"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "laravel/framework": "11.x-dev",
+        "illuminate/routing": "11.x-dev"
+    }
+}

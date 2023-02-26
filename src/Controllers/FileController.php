@@ -15,7 +15,7 @@ class FileController extends ApiController
         $this->fileService = new UploadFileService();
     }
 
-    public function upload(Request $request)
+    public function upload(Request $request): \Illuminate\Http\JsonResponse
     {
         try {
             $model = $this->fileService->upload($request->file('file'));

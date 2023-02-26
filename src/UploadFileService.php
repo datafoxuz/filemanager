@@ -16,7 +16,7 @@ class UploadFileService
      * @return File|Exception
      * @throws Exception
      */
-    public function upload(UploadedFile $file): File|Exception
+    public function upload($file): File|Exception
     {
         $name = $file->getClientOriginalName();
         $fileName = $file->getFilename();

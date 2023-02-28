@@ -19,5 +19,8 @@
             "name": "AsadbekDev"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "require": {
+        "intervention/image": "^2.7"
+    }
 }

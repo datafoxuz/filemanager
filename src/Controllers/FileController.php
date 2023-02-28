@@ -3,7 +3,7 @@
 namespace Cyberbrains\Filemanager\Controllers;
 use Cyberbrains\Filemanager\UploadFileService;
 use Exception;
-use Illuminate\Http\Client\Request;
+use Illuminate\Http\Request;
 
 class FileController extends ApiController
 {

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('ext', 20);
             $table->text('link');
             $table->text('domain');
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
             $table->text('upload_data');
             $table->text('path');
             $table->integer('size');

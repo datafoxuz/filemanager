@@ -4,10 +4,11 @@ namespace Cyberbrains\Filemanager;
 
 use Cyberbrains\Filemanager\Models\File;
 use Exception;
-use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Storage;
+use Symfony\Component\HttpFoundation\FileBag;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 class UploadFileService
 {
     /**
@@ -15,7 +16,7 @@ class UploadFileService
      * @return File|Exception
      * @throws Exception
      */
-    public function upload(UploadedFile $file): File|Exception
+    public function upload($file): File|Exception
     {
         $name = $file->getClientOriginalName();
         $user_id = Auth::id();
@@ -38,7 +39,7 @@ class UploadFileService
      * @param $user_id
      * @return string
      */
-    function uploadFile($file, $user_id): string
+    function uploadFile(UploadedFile $file, $user_id): string
     {
         $fileName = $file->getFilename();
         $type = strtok($file->getMimeType(), '/');
@@ -54,7 +55,7 @@ class UploadFileService
             $service->storePoster($file, $fullPath);
             $link = env('STATIC_HOST') . $fileName . '.webp';
         } else {
-            $file->store('files/' . Auth::id());
+            Storage::put('files/' . Auth::id());
             $link = env('STATIC_HOST') . $file->hashName();
         }
         return $link;
@@ -67,11 +68,11 @@ class UploadFileService
      * @param $path
      * @return File
      */
-    function store($name, $file, $link, $path): File
+    function store($name, UploadedFile $file, $link, $path): File
     {
         $fileModel = new File();
         $fileModel->name = $name;
-        $fileModel->ext = $file->extension();
+        $fileModel->ext = $file->getExtension();
         $fileModel->link = $link;
         $fileModel->user_id = Auth::id();
         $fileModel->size = $file->getSize();
@@ -86,8 +87,9 @@ class UploadFileService
     /**
      * @throws Exception
      */
-    public function multiUpload($files = []): array
+    public function multiUpload($files)
     {
+        $uploads = [];
         foreach ($files as $file){
             $uploads[] = $this->upload($file);
         }

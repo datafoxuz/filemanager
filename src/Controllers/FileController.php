@@ -28,10 +28,11 @@ class FileController extends ApiController
     public function multiUpload(Request $request): JsonResponse
     {
         try {
-            $models = $this->fileService->multiUpload($request->file('files'));
+            $models = $this->fileService->multiUpload($request->files);
         } catch (Exception $exception) {
             return $this->sendError($exception->getMessage());
         }
+
         return $this->sendResponse($models);
     }
 }

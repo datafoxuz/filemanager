@@ -2,8 +2,8 @@
 
 namespace Cyberbrains\Filemanager;
 
-use Illuminate\Http\UploadedFile;
 use Intervention\Image\Facades\Image;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class WebpConverter
 {

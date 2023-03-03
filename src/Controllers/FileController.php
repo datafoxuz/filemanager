@@ -1,6 +1,7 @@
 <?php
 
 namespace Cyberbrains\Filemanager\Controllers;
+use Cyberbrains\Filemanager\FileResource;
 use Cyberbrains\Filemanager\UploadFileService;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -33,6 +34,6 @@ class FileController extends ApiController
             return $this->sendError($exception->getMessage());
         }
 
-        return $this->sendResponse($models);
+        return $this->sendResponse(FileResource::collection($models));
     }
 }

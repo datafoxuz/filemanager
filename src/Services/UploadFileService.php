@@ -1,14 +1,15 @@
 <?php
 
-namespace Cyberbrains\Filemanager;
+namespace Cyberbrains\Filemanager\Services;
 
 use Cyberbrains\Filemanager\Models\File;
+use Cyberbrains\Filemanager\WebpConverter;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use Symfony\Component\HttpFoundation\FileBag;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 class UploadFileService
 {
     /**
@@ -18,7 +19,7 @@ class UploadFileService
      */
     public function upload($file): File|Exception
     {
-        $name = $file->getClientOriginalName();
+        $name = $file->getFilename();
         $user_id = Auth::id();
         $path = '/storage/files/' . $user_id . '/';
 
@@ -35,7 +36,7 @@ class UploadFileService
     }
 
     /**
-     * @param $file
+     * @param UploadedFile $file
      * @param $user_id
      * @return string
      */

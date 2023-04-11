@@ -2,7 +2,7 @@
 
 namespace Cyberbrains\Filemanager\Controllers;
 use Cyberbrains\Filemanager\FileResource;
-use Cyberbrains\Filemanager\UploadFileService;
+use Cyberbrains\Filemanager\Services\UploadFileService;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;

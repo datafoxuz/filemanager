@@ -2,6 +2,7 @@
 
 namespace Cyberbrains\Filemanager\Controllers;
 use Cyberbrains\Filemanager\FileResource;
+use Cyberbrains\Filemanager\Models\File;
 use Cyberbrains\Filemanager\Services\UploadFileService;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -35,5 +36,14 @@ class FileController extends ApiController
         }
 
         return $this->sendResponse(FileResource::collection($models));
+    }
+    public function view($file_id): \Symfony\Component\HttpFoundation\BinaryFileResponse|JsonResponse
+    {
+        try {
+            $file = File::query()->where(['id' => $file_id])->firstOrFail();
+        } catch (Exception $exception) {
+            return $this->sendError($exception->getMessage());
+        }
+        return response()->file(storage_path() . '/app/public/' . $file->path . $file->name . '.' . $file->ext);
     }
 }
